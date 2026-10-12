@@ -77,6 +77,28 @@ The database stores application information, while Supabase Realtime distributes
 
 This enables communication without requiring users to refresh the page manually.
 
+Conceptual architecture showing the application's hosting and backend services.
+
+```mermaid
+flowchart TB
+    NYC["NYC Browser Client"]
+    OSLO["Oslo Browser Client"]
+    CF["Cloudflare — Web Hosting"]
+    SB["Supabase"]
+    AUTH["Authentication"]
+    DB["PostgreSQL Database"]
+    RT["Realtime Updates"]
+
+    NYC --> CF
+    OSLO --> CF
+    NYC <--> SB
+    OSLO <--> SB
+    SB --> AUTH
+    SB --> DB
+    SB --> RT
+```
+  
+
 ## Deployment
 
 HeartBeat is deployed online using **Cloudflare**, making the application accessible to its authorized users from different locations.
