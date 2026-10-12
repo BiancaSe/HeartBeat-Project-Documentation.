@@ -106,3 +106,27 @@ HeartBeat is deployed online using **Cloudflare**, making the application access
 The frontend communicates with Supabase for authentication, persistent data storage, and real-time updates.
 
 This architecture allows both users to access the same application independently while exchanging messages, heartbeats, and status information in real time.
+
+## Development Challenges and Lessons Learned
+
+HeartBeat started as a fairly simple idea: a way for two people in different countries to stay connected through a small web application. As I worked on it, the project became more interesting technically.
+
+One of the biggest learning experiences was getting Supabase Realtime working properly. I had to make sure that when something changed on one node, the other would receive the update without refreshing the page. Testing the NYC and Oslo nodes in separate browsers helped me understand how the database, subscriptions, and frontend work together.
+
+Adding authentication was another important step. I used Supabase Auth to implement login and persistent sessions, and worked with Row Level Security to manage database access.
+
+I also learned more about deploying a web application through Cloudflare and the difference between having something work locally and making it accessible over the internet.
+
+Along the way, I spent quite a bit of time adjusting the interface, fixing small problems, and testing how the different features behaved together.
+
+What I like about this project is that it's something I actually use. It gave me practical experience with JavaScript, databases, authentication, real-time communication, and deployment, but also with the less glamorous part of development: troubleshooting things until they work the way I intended.
+
+## Project Status
+
+**Operational — ongoing development**
+
+HeartBeat is deployed online and in use. The main features are working, including real-time heartbeats, direct messaging, status updates, and user authentication.
+
+I'm continuing to improve the application as I use it, with possible future additions such as push notifications and further mobile interface improvements.
+
+The source code is maintained in a private repository, while this public repository documents the project and its development.
