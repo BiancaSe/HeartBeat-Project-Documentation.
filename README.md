@@ -11,7 +11,11 @@ Built using HTML, CSS, JavaScript, and Supabase, HeartBeat explores real-time da
 The project combines practical web development with a personal use case, focusing on simplicity, responsiveness, and reliable communication.
 
 **This repository documents the project's design, architecture, functionality, and development process. The application source code is maintained in a separate private repository.**
+## Application Interface
 
+HeartBeat features a custom-designed interface with real-time messaging, heartbeat transmission, authentication, and individual node status panels.
+
+![HeartBeat Web Application](HeartBeat-dashboard-demo.png)
 
 ## Technologies
 
