@@ -22,6 +22,9 @@ The project combines practical web development with a personal use case, focusin
 | Real-time communication | Supabase Realtime |
 | Version control | Git and GitHub |
 | Architecture | Two-node web application |
+| Authentication | Supabase Auth |
+| Hosting and deployment | Cloudflare |
+
 
 ## Implemented Features
 
@@ -44,6 +47,24 @@ The project combines practical web development with a personal use case, focusin
 - Persistent heartbeat and status information
 - Browser-based node identification
 
+ 
+## Security and Authentication
+
+HeartBeat integrates **Supabase Authentication** to manage user access and maintain authenticated sessions.
+
+**Implemented features:**
+- Email-and-password authentication through Supabase Auth
+- Login integrated into the web application
+- Persistent authentication sessions, allowing users to remain signed in
+- Supabase Row Level Security (RLS) enabled on application database tables
+- Authentication and database management handled through Supabase
+
+**Security architecture:**
+
+Supabase Auth manages user authentication and sessions, while PostgreSQL Row Level Security provides database-level access controls.
+
+The application is designed for a small, private group of authorized users rather than public registration.
+
 ## Project Architecture
 
 HeartBeat uses a two-node design, with both browser clients communicating through Supabase.
@@ -51,3 +72,11 @@ HeartBeat uses a two-node design, with both browser clients communicating throug
 The database stores application information, while Supabase Realtime distributes updates between connected clients.
 
 This enables communication without requiring users to refresh the page manually.
+
+## Deployment
+
+HeartBeat is deployed online using **Cloudflare**, making the application accessible to its authorized users from different locations.
+
+The frontend communicates with Supabase for authentication, persistent data storage, and real-time updates.
+
+This architecture allows both users to access the same application independently while exchanging messages, heartbeats, and status information in real time.
